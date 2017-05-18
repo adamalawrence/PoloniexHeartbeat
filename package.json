@@ -1,0 +1,24 @@
+{
+  "name": "polo-pulse",
+  "version": "1.0.0",
+  "description": "cool analytics of Poloniex exchange",
+  "main": "dataPoller.js",
+  "dependencies": {
+    "jsnetworkx": "^0.3.4",
+    "poloniex.js": "^0.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamalawrence/PoloniexHeartbeat.git"
+  },
+  "author": "Adam Lawrence",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamalawrence/PoloniexHeartbeat/issues"
+  },
+  "homepage": "https://github.com/adamalawrence/PoloniexHeartbeat#readme"
+}
