@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ostia Pulse</title>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://rawgit.com/fkling/JSNetworkX/v0.3.4/jsnetworkx.js"></script>
+    <script src="bundle.js"></script>
 </head>
 
 <body>
+    <div id="canvas"></div>
 
-  <div id="canvas"></div>
+    <!-- **************** -->
+    <script>
+        $(document).ready(function() {
 
-  <!-- **************** -->
-  <script>
-  $(document).ready(function() {
 
-    var G = new jsnx.Graph();
+            var G = new jsnx.Graph();
 
-    console.log(G);
-    G.addWeightedEdgesFrom([[2,3,10]]);
-    G.addStar([3,4,5,6], {weight: 5});
-    G.addStar([2,1,0,-1], {weight: 3});
+            G.addNode(0);
+            jsnx.draw(G, {
+                    element: '#canvas',
+                    weighted: true,
+                    edgeStyle: {
+                        'stroke-width': 10
+                    }
+                },
+                true
+            );
 
-    jsnx.draw(G, {
-        element: '#canvas',
-        weighted: true,
-        edgeStyle: {
-            'stroke-width': 10
-        }
-    });
+            var i = 1;
+            setInterval(function() {
+                console.log('adding node', i);
+                G.addNode(i);
+                i++;
+                // G.redraw();
+            }, 2000);
 
-  });
-  </script>
-  <!-- **************** -->
 
-  <script src="https://rawgit.com/fkling/JSNetworkX/v0.3.4/jsnetworkx.js"></script>
+        });
+    </script>
+    <!-- **************** -->
+
+
 
 </body>
+
 </html>
